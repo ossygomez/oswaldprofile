@@ -1,0 +1,29 @@
+{
+  "displayName": "Oswaldo D. Gómez Socorro",
+  "username": "oswaldogomezs",
+  "tagline": "Senir WordPress Developer and Automation Expert",
+  "avatarUrl": "/avatar_oswaldogomezs.jpg",
+  "bannerUrl": "/mesh1.webp",
+  "ctaLabel": "Visitar mi web",
+  "ctaUrl": "",
+  "accentColor": "#FF6B6B",
+  "colorMode": "light",
+  "borderRadius": 12,
+  "tabs": [
+    {
+      "label": "Principal",
+      "links": [
+        { "label": "Mi Github", "url": "https://github.com/ossygomez" },
+        { "label": "Mi CV", "url": "" }
+      ]
+    },
+    {
+      "label": "Redes",
+      "links": [
+        { "label": "Instagram", "url": "https://instagram.com/oswaldogomezs" },
+        { "label": "LinkedIn", "url": "https://linkedin.com/in/oswaldogomezs" },
+        { "label": "X (Twitter)", "url": "https://x.com/oswaldogomezs" }
+      ]
+    }
+  ]
+}

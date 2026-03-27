@@ -1,0 +1,159 @@
+---
+import profile from '../data/profile.json';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Nombre - Links</title>
+  <meta name="description" content="Tu tagline aqui">
+
+  <!-- Open Graph para compartir en redes -->
+  <meta property="og:title" content="Tu Nombre">
+  <meta property="og:description" content="Tu tagline aqui">
+  <meta property="og:image" content="./og-image.png">
+  <meta property="og:url" content="https://tu-dominio.com">
+  <meta property="og:type" content="website">
+
+  <!-- Google Font (la que usa Taglify por defecto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- div class="profile-container">
+
+    <!-- Banner - ->
+    <div class="banner">
+      <img src="./banner.jpg" alt="Banner" />
+    </div>
+
+    <!-- Avatar - ->
+    <div class="avatar-wrapper">
+      <img src="./avatar.jpg" alt="Tu nombre" class="avatar" />
+    </div>
+
+    <!-- Info - ->
+    <div class="info">
+      <h1 class="display-name">Tu Nombre</h1>
+      <p class="tagline">Disenador grafico & creador de contenido</p>
+      <p class="username">@tunombre</p>
+    </div>
+
+    <!-- CTA - ->
+    <a href="https://tu-web.com" class="cta-button" target="_blank" rel="noopener">
+      Visitar mi web
+    </a>
+
+    <!-- Tabs - ->
+    <nav class="tabs">
+      <button class="tab active" data-tab="principal">Principal</button>
+      <button class="tab" data-tab="redes">Redes</button>
+      <button class="tab" data-tab="proyectos">Proyectos</button>
+    </nav>
+
+    <!-- Links por tab - ->
+    <div class="links-container">
+      <!-- Tab: Principal (visible por defecto) - ->
+      <div class="tab-content active" id="tab-principal">
+        <a href="https://tu-web.com" class="link-button" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+          Mi portfolio
+        </a>
+        <a href="https://blog.tu-web.com" class="link-button" target="_blank" rel="noopener">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+          Mi blog
+        </a>
+      </div>
+
+      <!-- Tab: Redes - ->
+      <div class="tab-content" id="tab-redes">
+        <a href="https://instagram.com/tunombre" class="link-button" target="_blank" rel="noopener">
+          Instagram
+        </a>
+        <a href="https://linkedin.com/in/tunombre" class="link-button" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
+        <a href="https://x.com/tunombre" class="link-button" target="_blank" rel="noopener">
+          X (Twitter)
+        </a>
+      </div>
+
+      <!-- Tab: Proyectos - ->
+      <div class="tab-content" id="tab-proyectos">
+        <a href="https://github.com/tunombre/proyecto1" class="link-button" target="_blank" rel="noopener">
+          Proyecto Open Source
+        </a>
+      </div>
+    </div> -->
+      <div class="profile-container">
+    <div class="banner">
+      <img src={profile.bannerUrl} alt="Banner" />
+    </div>
+
+    <div class="avatar-wrapper">
+      <img src={profile.avatarUrl} alt={profile.displayName} class="avatar" />
+    </div>
+
+    <div class="info">
+      <h1>{profile.displayName}</h1>
+      <p class="tagline">{profile.tagline}</p>
+      <p class="username">@{profile.username}</p>
+    </div>
+
+    {profile.ctaUrl && (
+      <a href={profile.ctaUrl} class="cta-button" target="_blank" rel="noopener">
+        {profile.ctaLabel}
+      </a>
+    )}
+
+    <nav class="tabs" id="tabs">
+      {profile.tabs.map((tab, i) => (
+        <button
+          class={`tab ${i === 0 ? 'active' : ''}`}
+          data-tab={i}
+        >
+          {tab.label}
+        </button>
+      ))}
+    </nav>
+
+    <div class="links-container">
+      {profile.tabs.map((tab, i) => (
+        <div class={`tab-content ${i === 0 ? 'active' : ''}`} id={`tab-${i}`}>
+          {tab.links.map(link => (
+            <a href={link.url} class="link-button" target="_blank" rel="noopener">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelector('.tab.active')?.classList.remove('active');
+        document.querySelector('.tab-content.active')?.classList.remove('active');
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab)?.classList.add('active');
+      });
+    });
+  </script>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Hecho con Taglify</p>
+    </footer>
+  </div>
+
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>

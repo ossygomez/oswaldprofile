@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import profile from '../data/profile.json';
+---
+
+<Layout title={profile.displayName}>
+  <div class="profile-container">
+    <div class="banner">
+      <img src={profile.bannerUrl} alt="Banner" />
+    </div>
+
+    <div class="avatar-wrapper">
+      <img src={profile.avatarUrl} alt={profile.displayName} class="avatar" />
+    </div>
+
+    <div class="info">
+      <h1>{profile.displayName}</h1>
+      <p class="tagline">{profile.tagline}</p>
+      <p class="username">@{profile.username}</p>
+    </div>
+
+    {profile.ctaUrl && (
+      <a href={profile.ctaUrl} class="cta-button" target="_blank" rel="noopener">
+        {profile.ctaLabel}
+      </a>
+    )}
+
+    <nav class="tabs" id="tabs">
+      {profile.tabs.map((tab, i) => (
+        <button
+          class={`tab ${i === 0 ? 'active' : ''}`}
+          data-tab={i}
+        >
+          {tab.label}
+        </button>
+      ))}
+    </nav>
+
+    <div class="links-container">
+      {profile.tabs.map((tab, i) => (
+        <div class={`tab-content ${i === 0 ? 'active' : ''}`} id={`tab-${i}`}>
+          {tab.links.map(link => (
+            <a href={link.url} class="link-button" target="_blank" rel="noopener">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelector('.tab.active')?.classList.remove('active');
+        document.querySelector('.tab-content.active')?.classList.remove('active');
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.nodeValue)?.classList.add('active');
+      });
+    });
+  </script>
+</Layout>

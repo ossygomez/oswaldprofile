@@ -1,11 +1,11 @@
 {
   "displayName": "Oswaldo D. Gómez Socorro",
   "username": "oswaldogomezs",
-  "tagline": "Senir WordPress Developer and Automation Expert",
+  "tagline": "Senior WordPress Developer and Automation Expert",
   "avatarUrl": "/avatar_oswaldogomezs.jpg",
   "bannerUrl": "/mesh1.webp",
   "ctaLabel": "Visitar mi web",
-  "ctaUrl": "",
+  "ctaUrl": "/",
   "accentColor": "#FF6B6B",
   "colorMode": "light",
   "borderRadius": 12,
@@ -14,7 +14,7 @@
       "label": "Principal",
       "links": [
         { "label": "Mi Github", "url": "https://github.com/ossygomez" },
-        { "label": "Mi CV", "url": "" }
+        { "label": "Mi CV", "url": "/CV_Senior_WordPress_Web_Oswaldo_Gomez.pdf" }
       ]
     },
     {

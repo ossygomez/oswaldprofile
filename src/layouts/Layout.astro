@@ -6,93 +6,22 @@ import profile from '../data/profile.json';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tu Nombre - Links</title>
-  <meta name="description" content="Tu tagline aqui">
+  <title>{ profile.displayName } - Links</title>
+  <meta name="description" content={profile.tagline}>
 
-  <!-- Open Graph para compartir en redes -->
-  <meta property="og:title" content="Tu Nombre">
-  <meta property="og:description" content="Tu tagline aqui">
-  <meta property="og:image" content="./og-image.png">
-  <meta property="og:url" content="https://tu-dominio.com">
-  <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content={profile.displayName}>
+  <meta property="og:description" content={profile.tagline}>
+  <meta property="og:image" content={profile.avatarUrl}>
+  <meta property="og:url" content={profile.ctaUrl}>
+  <meta property="og:type" content="Website">
 
-  <!-- Google Font (la que usa Taglify por defecto) -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- div class="profile-container">
-
-    <!-- Banner - ->
-    <div class="banner">
-      <img src="./banner.jpg" alt="Banner" />
-    </div>
-
-    <!-- Avatar - ->
-    <div class="avatar-wrapper">
-      <img src="./avatar.jpg" alt="Tu nombre" class="avatar" />
-    </div>
-
-    <!-- Info - ->
-    <div class="info">
-      <h1 class="display-name">Tu Nombre</h1>
-      <p class="tagline">Disenador grafico & creador de contenido</p>
-      <p class="username">@tunombre</p>
-    </div>
-
-    <!-- CTA - ->
-    <a href="https://tu-web.com" class="cta-button" target="_blank" rel="noopener">
-      Visitar mi web
-    </a>
-
-    <!-- Tabs - ->
-    <nav class="tabs">
-      <button class="tab active" data-tab="principal">Principal</button>
-      <button class="tab" data-tab="redes">Redes</button>
-      <button class="tab" data-tab="proyectos">Proyectos</button>
-    </nav>
-
-    <!-- Links por tab - ->
-    <div class="links-container">
-      <!-- Tab: Principal (visible por defecto) - ->
-      <div class="tab-content active" id="tab-principal">
-        <a href="https://tu-web.com" class="link-button" target="_blank" rel="noopener">
-          <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-          </svg>
-          Mi portfolio
-        </a>
-        <a href="https://blog.tu-web.com" class="link-button" target="_blank" rel="noopener">
-          <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-          </svg>
-          Mi blog
-        </a>
-      </div>
-
-      <!-- Tab: Redes - ->
-      <div class="tab-content" id="tab-redes">
-        <a href="https://instagram.com/tunombre" class="link-button" target="_blank" rel="noopener">
-          Instagram
-        </a>
-        <a href="https://linkedin.com/in/tunombre" class="link-button" target="_blank" rel="noopener">
-          LinkedIn
-        </a>
-        <a href="https://x.com/tunombre" class="link-button" target="_blank" rel="noopener">
-          X (Twitter)
-        </a>
-      </div>
-
-      <!-- Tab: Proyectos - ->
-      <div class="tab-content" id="tab-proyectos">
-        <a href="https://github.com/tunombre/proyecto1" class="link-button" target="_blank" rel="noopener">
-          Proyecto Open Source
-        </a>
-      </div>
-    </div> -->
       <div class="profile-container">
     <div class="banner">
       <img src={profile.bannerUrl} alt="Banner" />
@@ -153,7 +82,5 @@ import profile from '../data/profile.json';
       <p>Hecho con Taglify</p>
     </footer>
   </div>
-
-  <!-- <script src="script.js"></script> -->
 </body>
 </html>

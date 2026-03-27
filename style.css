@@ -30,9 +30,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
+  margin:0 auto;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  width: max-content;
 }
 
 .profile-container {
